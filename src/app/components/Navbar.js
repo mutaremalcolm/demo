@@ -4,7 +4,7 @@ import { Info, LockIcon } from "lucide-react";
 function Navbar() {
   return (
     <nav className="flex flex-row justify-between py-4 px-3">
-      <Link href="/page">
+      <Link href="/">
         <h1 className="text-2xl font-bold ml-2">Demo</h1>
       </Link>
       <div className="flex flex-row gap-5 text-xl">
