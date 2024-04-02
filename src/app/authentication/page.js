@@ -21,6 +21,7 @@ function Authentication() {
       inputSchema.parse(value);
       setError(null);
     } catch (validationError) {
+
       setError(validationError.errors[0].message);
     }
   };

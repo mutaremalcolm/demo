@@ -17,4 +17,5 @@ test('submits form when valid text is entered', () => {
   fireEvent.submit(screen.getByRole('button', { name: 'Submit' }));
   const successMessage = screen.getByText('Text submitted! Thank You');
   expect(successMessage).toBeInTheDocument();
+
 });

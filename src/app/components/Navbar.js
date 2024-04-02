@@ -3,6 +3,7 @@ import { Info, LockIcon } from "lucide-react";
 
 function Navbar() {
   return (
+
     <nav className="flex flex-col lg:flex-row justify-between py-4 px-3 lg:px-8">
       <div className="flex items-center">
         <Link href="/">
@@ -28,3 +29,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
