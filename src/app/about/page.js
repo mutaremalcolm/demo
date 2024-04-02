@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -22,9 +21,10 @@ function About() {
     <main className="h-[80vh] flex flex-col items-center justify-center gap-6 mx-auto">
       <h1 className="text-4xl">This is the About Page</h1>
       <p className="text-base text-zinc-400 text-center">
-        Below is a simple counter.<br/>Click Add 1 to take it up and Minus 1 to take it down.<br/> It stays above zero and below 10
+        Below is a simple counter.<br />Click Add 1 to take it up and Minus 1 to take it down.<br /> It stays above zero and below 10
       </p>
-      <div>Count: {count}</div> 
+      <div>Count: {count}</div>
+
       {count === 0 && <div className="text-red-500">Cannot go below 0</div>}
       {count === 10 && <div className="text-red-500">Cannot go above 10</div>}
       <div className="flex gap-x-4">
@@ -40,5 +40,3 @@ function About() {
 }
 
 export default About;
-
-   
