@@ -41,7 +41,7 @@ function Authentication() {
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          placeholder="Enter your text"
+          placeholder="Enter your name"
           className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
         />
         {error && <div className="text-red-500">{error}</div>}
@@ -53,9 +53,9 @@ function Authentication() {
         </button>
       </form>
       {submitted ? (
-        <p className="mt-4 text-xl">Text submitted! Thank You</p>
+        <p className="mt-4 text-xl">Name Valid!! Thank You</p>
       ) : (
-        <p className="mt-4 text-xl text-center">Please enter text above (Numbers & Special Characters are not accepted) and click submit.</p>
+        <p className="mt-4 text-xl text-center">Please enter your name (Numbers & Special Characters are not accepted) and click submit.</p>
       )}
     </main>
   );
