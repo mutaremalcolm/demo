@@ -17,7 +17,7 @@ This is a demonstration application showcasing various features implemented usin
 
 ## Live Demo
 
-The project is deployed and accessible via the following link: [Demo App](https://demo-1qzxopnjl-mutaremalcolms-projects.vercel.app/)
+The project is deployed and accessible via the following link: [Demo App](https://demo-f3uzjclzl-mutaremalcolms-projects.vercel.app/)
 
 ## Todo
 - Refactor UI and add Dark Mode
