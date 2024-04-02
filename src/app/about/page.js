@@ -35,7 +35,7 @@ function About() {
         </button>
       </div>
     </main>
-  );
+  )
 }
 
 export default About;
