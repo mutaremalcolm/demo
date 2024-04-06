@@ -13,7 +13,6 @@ const inputSchema = z.string()
   .max(16, { message: "Name must be at most 16 characters long" })
   .regex(/^[A-Za-z\s]+$/, { message: "Name can only contain letters and spaces" });
 
-const notify = () => toast('Name Valid!! Please proceed to the Dashboard');
 
 function Authentication() {
   const [inputValue, setInputValue] = useState('');
@@ -43,6 +42,7 @@ function Authentication() {
       return;
     }
     setSubmitted(true);
+    toast.success("Name Valid!! Please proceed to the Dashboard")
   };
 
   return (
@@ -59,7 +59,6 @@ function Authentication() {
         />
         {error && <div className="text-red-500">{error}</div>}
         <button
-          onClick={notify}
           type="submit"
           className="mt-2 text-lg font-semibold rounded-lg px-4 py-2 w-full bg-gradient-to-r from-green-400
            to-blue-500"
