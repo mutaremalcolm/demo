@@ -47,7 +47,7 @@ function Authentication() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8">
-      <h1 className="text-4xl text-center lg:text-6xl">This is the Authentication Page</h1>
+      <h1 className="text-4xl text-center lg:text-6xl">Authentication Page</h1>
       <form onSubmit={handleSubmit} className="max-w-md w-full">
         <input
           type="text"
@@ -67,9 +67,10 @@ function Authentication() {
         </button>
       </form>
       {submitted ? (
-        <p className="mt-4 text-xl">Name Valid!! Please proceed to the Dashboard</p>
+        <p className="mt-4 text-lg"></p>
       ) : (
-        <p className="mt-4 text-xl text-center">Please enter your name (Numbers & Special Characters are not accepted) and click submit.</p>
+        <p className="mt-4 text-lg text-center">Please enter your name <br/> 
+        (Numbers & Special Characters are not accepted)</p>
       )}
     </main>
   );

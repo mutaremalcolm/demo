@@ -26,7 +26,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="flex flex-row gap-5 text-xl lg:ml-auto">
-        <Link href="/about" className="flex items-center gap-2">
+        <Link href="/dashboard/" className="flex items-center gap-2">
           <span>
             {isMobile ? (
               <LayoutDashboard />
