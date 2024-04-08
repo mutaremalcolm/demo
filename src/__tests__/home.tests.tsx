@@ -1,20 +1,36 @@
-import '@testing-library/jest-dom'
-import { fireEvent, render, screen } from '@testing-library/react'
-import Authentication from '../app/authentication/page';
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import Authentication from '@/app/authentication/page';
 
-test('renders authentication page with input field and submit button', () => {
-  render(<Authentication />);
-  const inputElement = screen.getByPlaceholderText('Enter your text');
-  expect(inputElement).toBeInTheDocument();
-  const submitButton = screen.getByText('Submit');
-  expect(submitButton).toBeInTheDocument();
-});
+describe('Authentication Component', () => {
+  it('renders correctly', () => {
+    const { getByText, getByPlaceholderText } = render(<Authentication />);
+    
+    expect(getByText('Authentication Page')).toBeInTheDocument();
+    expect(getByPlaceholderText('Enter your name')).toBeInTheDocument();
+    expect(getByText('Submit')).toBeInTheDocument();
+    expect(getByText('Please enter your name')).toBeInTheDocument();
+  });
 
-test('submits form when valid text is entered', () => {
-  render(<Authentication />);
-  const inputElement = screen.getByPlaceholderText('Enter your text');
-  fireEvent.change(inputElement, { target: { value: 'Valid text' } });
-  fireEvent.submit(screen.getByRole('button', { name: 'Submit' }));
-  const successMessage = screen.getByText('Text submitted! Thank You');
-  expect(successMessage).toBeInTheDocument();
+  it('displays error message for invalid input', () => {
+    const { getByText, getByPlaceholderText } = render(<Authentication />);
+    const input = getByPlaceholderText('Enter your name');
+    
+    fireEvent.change(input, { target: { value: '123' } }); // Invalid input
+    
+    fireEvent.click(getByText('Submit'));
+    
+    expect(getByText('Name must be at least 3 characters long')).toBeInTheDocument();
+  });
+
+  it('submits form with valid input', () => {
+    const { getByText, getByPlaceholderText } = render(<Authentication />);
+    const input = getByPlaceholderText('Enter your name');
+    
+    fireEvent.change(input, { target: { value: 'John Doe' } }); // Valid input
+    
+    fireEvent.click(getByText('Submit'));
+    
+    expect(getByText('Name Valid!! Please proceed to the Dashboard')).toBeInTheDocument();
+  });
 });

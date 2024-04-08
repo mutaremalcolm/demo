@@ -8,7 +8,7 @@ const createJestConfig = nextJest({
 const config = {
   projects: [
     await createJestConfig({
-      setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+      setupFilesAfterEnv: ["<rootDir>/jest.setup.tsx"],
       transform: { "^.+\\.ts?$": "ts-jest" },
       coveragePathIgnorePatterns: ["<rootDir>/node_modules/"],
       preset: "ts-jest",
