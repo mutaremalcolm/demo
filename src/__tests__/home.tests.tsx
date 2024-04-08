@@ -34,3 +34,4 @@ describe('Authentication Component', () => {
     expect(getByText('Name Valid!! Please proceed to the Dashboard')).toBeInTheDocument();
   });
 });
+

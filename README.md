@@ -19,6 +19,7 @@ This is a demonstration application showcasing various features implemented usin
 
 The project is deployed and accessible via the following link: [Demo App](https://demo-1qzxopnjl-mutaremalcolms-projects.vercel.app/)
 
+
 ## Todo
 - Refactor UI and add Dark Mode
 - Enhance Authentication functionality
