@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-function About() {
+function Dashboard() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8">
       <div className="max-w-md">
@@ -31,4 +31,4 @@ function About() {
   );
 }
 
-export default About;
+export default Dashboard;

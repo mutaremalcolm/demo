@@ -1,36 +1,40 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
-import Authentication from '@/app/authentication/page';
+import { render, screen } from '@testing-library/react';
+import Home from '../app/page';
+import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
 
-describe('Authentication Component', () => {
-  it('renders correctly', () => {
-    const { getByText, getByPlaceholderText } = render(<Authentication />);
-    
-    expect(getByText('Authentication Page')).toBeInTheDocument();
-    expect(getByPlaceholderText('Enter your name')).toBeInTheDocument();
-    expect(getByText('Submit')).toBeInTheDocument();
-    expect(getByText('Please enter your name')).toBeInTheDocument();
+describe('Home Component', () => {
+  test('renders welcome message', () => {
+    render(<Home />);
+    const welcomeMessage = screen.getByText(/Welcome to my React Fundamentals Application/i);
+    expect(welcomeMessage).toBeInTheDocument();
   });
 
-  it('displays error message for invalid input', () => {
-    const { getByText, getByPlaceholderText } = render(<Authentication />);
-    const input = getByPlaceholderText('Enter your name');
-    
-    fireEvent.change(input, { target: { value: '123' } }); // Invalid input
-    
-    fireEvent.click(getByText('Submit'));
-    
-    expect(getByText('Name must be at least 3 characters long')).toBeInTheDocument();
+  test('renders application description', () => {
+    render(<Home />);
+    const appDescription = screen.getByText(/This Application is designed to showcase the usage of basic React features/i);
+    expect(appDescription).toBeInTheDocument();
   });
 
-  it('submits form with valid input', () => {
-    const { getByText, getByPlaceholderText } = render(<Authentication />);
-    const input = getByPlaceholderText('Enter your name');
-    
-    fireEvent.change(input, { target: { value: 'John Doe' } }); // Valid input
-    
-    fireEvent.click(getByText('Submit'));
-    
-    expect(getByText('Name Valid!! Please proceed to the Dashboard')).toBeInTheDocument();
+  test('renders start button with correct text', () => {
+    render(
+      <RouterContext.Provider value={{}}>
+        <Home />
+      </RouterContext.Provider>
+    );
+    const startButton = screen.getByText(/Start/i);
+    expect(startButton).toBeInTheDocument();
+  });
+
+  test('redirects to authentication page when start button is clicked', () => {
+    const pushMock = jest.fn();
+    render(
+      <RouterContext.Provider value={{ push: pushMock }}>
+        <Home />
+      </RouterContext.Provider>
+    );
+    const startButton = screen.getByText(/Start/i);
+    startButton.click();
+    expect(pushMock).toHaveBeenCalledWith('/authentication');
   });
 });
