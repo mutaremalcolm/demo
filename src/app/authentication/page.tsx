@@ -8,11 +8,9 @@ interface InputChangeEvent extends ChangeEvent<HTMLInputElement> {}
 
 type ValidationMessage = string | null;
 
-// Validation schema for email
 const emailSchema = z.string()
   .email({ message: "Invalid email format" });
 
-// Validation schema for password
 const passwordSchema = z.string()
   .min(6, { message: "Password must be at least 6 characters long" })
   .max(16, { message: "Password must be at most 16 characters long" })
