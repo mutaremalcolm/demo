@@ -38,3 +38,4 @@ describe('Home Component', () => {
     expect(pushMock).toHaveBeenCalledWith('/authentication');
   });
 });
+
