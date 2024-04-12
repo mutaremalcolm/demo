@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { LayoutDashboard, LockIcon } from "lucide-react";
+import { ModeToggle } from './mode-toggle';
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -26,6 +27,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="flex flex-row gap-5 text-xl lg:ml-auto">
+        <ModeToggle />
         <Link href="/dashboard/" className="flex items-center gap-2">
           <span>
             {isMobile ? (
