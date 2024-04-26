@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 function Dashboard() {
@@ -13,18 +14,22 @@ function Dashboard() {
           The two buttons below are to illustrate the implementation of State management & tracking changes
         </p>
         <div className="flex items-center justify-center gap-x-4">
+        <Link href="/useState/">
           <button
             className="text-lg font-semibold rounded-lg px-4 py-2 
             bg-gradient-to-r from-green-400 to-blue-500"
           >
             useState
           </button>
+          </Link>
+          <Link href="/useEffect/">
           <button
             className="text-lg font-semibold rounded-lg px-4 py-2 
             bg-gradient-to-r from-green-400 to-blue-500 transition:-translate-y-2"
           >
             useEffect
           </button>
+          </Link>
         </div>
       </div>
     </main>
