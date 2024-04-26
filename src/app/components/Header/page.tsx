@@ -5,7 +5,7 @@ interface HeaderProps {
     subtitle: string
 }
 
-const Header: React.FC = ({ title, subtitle }: HeaderProps) => {
+const Header: React.FC<HeaderProps>= ({ title, subtitle }: HeaderProps) => {
   return (
     <main className="h-screen flex flex-col items-center justify-center">
       <h1 className="text-4xl text-center lg:text-6xl">{title}</h1>
