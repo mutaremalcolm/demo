@@ -1,9 +1,9 @@
 {
   "pages": {
-    "/page": [
+    "/useState/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/page.js"
+      "static/chunks/app/useState/page.js"
     ],
     "/layout": [
       "static/chunks/webpack.js",
@@ -16,10 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/dashboard/page.js"
     ],
-    "/useState/page": [
+    "/useEffect/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/useState/page.js"
+      "static/chunks/app/useEffect/page.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
     ]
   }
 }
