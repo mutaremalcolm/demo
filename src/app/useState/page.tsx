@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Header from "../components/Header/page";
+import { Header } from "../components/Header/Header";
 
 const UseState = () => {
   const [color, setColor] = useState('black');
@@ -18,7 +18,7 @@ const UseState = () => {
           subtitle="This page demonstrates how useState works in React, The color of the text changes based on the button clicked"
         />
         <div style={{ color }}>
-          <span>Color</span>
+          <span className="text-bold">Color</span>
         </div>
         <div className="flex items-center justify-center gap-x-4 mt-0">
           <button

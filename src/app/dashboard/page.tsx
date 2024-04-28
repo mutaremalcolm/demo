@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import Header from "../components/Header/page";
+import { Header } from "../components/Header/Header";
 
 function Dashboard() {
   return (
