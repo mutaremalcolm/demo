@@ -3,6 +3,7 @@
 import * as z from "zod";
 import toast, { Toaster } from 'react-hot-toast';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { Header } from "../components/Header/Header";
 
 interface InputChangeEvent extends ChangeEvent<HTMLInputElement> {}
 
@@ -70,7 +71,10 @@ function Authentication() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8">
-      <h1 className="text-4xl text-center lg:text-6xl">Authentication Page</h1>
+      <Header
+        title="This is the authentication page"
+        subtitle="This page demonstrates how React handles input validation during the authentication process"
+      />
       <form onSubmit={handleSubmit} className="max-w-md w-full">
         <input
           type="email"
