@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Header } from "../components/Header/Header";
 
-const UseEffect = () => {
+const UseEffectDemo = () => {
   const [color, setColor] = useState('#000000'); 
 
 
@@ -40,4 +40,4 @@ const UseEffect = () => {
   );
 };
 
-export default UseEffect;
+export default UseEffectDemo;

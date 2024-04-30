@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LayoutDashboard, LockIcon } from "lucide-react";
-import { ModeToggle } from './mode-toggle';
+import { ModeToggle } from "./mode-toggle";
+import  React_logo  from "../../../public/asserts/navbar/react_logo.jpg";
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -14,9 +15,9 @@ function Navbar() {
     };
 
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (

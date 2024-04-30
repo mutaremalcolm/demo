@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import { Header } from "../components/Header/Header";
 
 const UseState = () => {
-  const [color, setColor] = useState('black');
+  const [color, setColor] = useState<string>('black');
 
-  function handleClick(newColor: React.SetStateAction<string>) {
+  const handleClick = (newColor: string) => {
     setColor(newColor);
   }
 
