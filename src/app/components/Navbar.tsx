@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LayoutDashboard, LockIcon } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
-import  React_logo  from "../../../public/asserts/navbar/react_logo.jpg";
+import  React_Logo  from "../../../public/assets/navbar/React_Logo.png";
+import Image from "next/image";
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -24,11 +25,11 @@ function Navbar() {
     <nav className="flex flex-col lg:flex-row justify-between py-4 px-3 lg:px-8">
       <div className="flex items-center">
         <Link href="/">
-          <h1 className="text-2xl font-bold">Demo</h1>
+        <Image src={React_Logo} alt="React Logo" className="h-12 w-auto" />
         </Link>
       </div>
       <div className="flex flex-row gap-5 text-xl lg:ml-auto">
-        <ModeToggle />
+        {/* <ModeToggle /> */}
         <Link href="/dashboard/" className="flex items-center gap-2">
           <span>
             {isMobile ? (
