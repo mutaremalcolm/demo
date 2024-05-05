@@ -22,7 +22,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="flex flex-col lg:flex-row justify-between py-4 px-3 lg:px-8">
+    <nav className="flex flex-col lg:flex-row justify-between py-4 px-3 lg:px-8 bg-sky-600">
       <div className="flex items-center">
         <Link href="/">
         <Image src={React_Logo} alt="React Logo" className="h-12 w-auto" />
