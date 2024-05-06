@@ -73,7 +73,7 @@ function Authentication() {
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8">
       <Header
         title="This is the authentication page"
-        subtitle="This page demonstrates how React handles input validation during the authentication process"
+        subtitle="This page demonstrates how to handle input validation during the authentication"
       />
       <form onSubmit={handleSubmit} className="max-w-md w-full">
         <input
