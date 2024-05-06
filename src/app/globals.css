@@ -71,8 +71,8 @@
       @apply border-border;
     }
     body {
-      color: black; /* Set text color to black */
-      background-color: white; /* Set background color to white */
+      color: white; /* Set text color to black */
+      background-color: #0284c7; /* Set background color to white */
     }
     
   }

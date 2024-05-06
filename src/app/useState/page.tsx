@@ -18,7 +18,7 @@ const UseState = () => {
           subtitle="This page demonstrates how useState works in React, The color of the text changes based on the button clicked"
         />
         <div style={{ color }}>
-          <span className="text-bold">Color</span>
+          <span className="font-mono text-5xl text-bold subpixel-antialiased">Color</span>
         </div>
         <div className="flex items-center justify-center gap-x-4 mt-0">
           <button
