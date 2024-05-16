@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Header } from "../components/Header/Header";
+import { Header } from "../../components/Header/Header";
 
 const UseState = () => {
   const [color, setColor] = useState<string>('black');

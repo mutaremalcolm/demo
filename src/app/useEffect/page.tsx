@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { Header } from "../components/Header/Header";
+import { Header } from "../../components/Header/Header";
 
 const UseEffectDemo = () => {
   const [color, setColor] = useState('#000000'); 
