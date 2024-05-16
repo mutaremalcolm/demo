@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LayoutDashboard, LockIcon, PenLine } from "lucide-react";
-import  React_Logo  from "../../../public/assets/navbar/React_Logo.png";
+import React_Logo from "../../public/assets/navbar/React_Logo.png";
 import Image from "next/image";
 
 function Navbar() {
