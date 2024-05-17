@@ -17,7 +17,7 @@ This is a demonstration application showcasing various features implemented usin
 
 ## Live Demo
 
-The project is deployed and accessible via the following link: [Demo App](https://demo-1qzxopnjl-mutaremalcolms-projects.vercel.app/)
+Here is a Live Link: [Demo App](https://demo-sable-rho.vercel.app/)
 
 
 ## Todo
