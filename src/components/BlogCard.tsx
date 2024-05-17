@@ -1,50 +1,34 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Card, CardHeader } from "./ui/card";
-import {GitBranch, Link2Icon} from "lucide-react";
+
+
 
 interface Props {
     project: any;
   }
 
 
-const BlogCard = ({ project }: Props)=> {
+const BlogCard = ({ project}: Props)=> {
     return (
         <Card className="group overflow-hidden relative">
             <CardHeader className="p-0">
                 {/* { image } */}
                 <div className="relative w-full h-[300px] flex items-center justify-center
-                bg-tertiary dark:bg-secondary/40 xl:bg-assets-blog-react19 xl:dark:bg-work_project_bg_dark 
+                bg-sky-600 dark:bg-secondary/40 xl:bg-assets-blog-react19  
                 xl:bg-[110%] xl:bg-no-repeat overflow-hidden"
                 >
                     <Image 
-                    className="absolute bottom-0 shadow-2xl" 
+                    className="absolute bottom-0 shadow-2xl m-2 mt-2" 
                     src={project.image} 
-                    width={247} 
-                    height={250} 
+                    width={400} 
+                    height={400} 
                     alt="" 
                     priority
                     />
-                    {/* btns */}
-                    <div className="flex gap-x-4">
-                        <Link href={project.link} 
-                        className="bg-primary w-[54px] h-[54px]rounded-full flex 
-                        justify-center items-center scale-0  opacity-0 group-hover:scale-100 
-                        group-hover:opacity-100 transition-all duration-200"
-                        >
-                        <Link2Icon className="text-white"/>
-                        </Link>
-                        <Link href={project.gitbranch} 
-                        className="bg-primary w-[54px] h-[54px]rounded-full flex 
-                        justify-center items-center scale-0  opacity-0 group-hover:scale-100 
-                        group-hover:opacity-100 transition-all duration-200"
-                        >
-                        <GitBranch className="text-white"/>
-                        </Link>
-                    </div>
                 </div>
             </CardHeader>
-            <div className="h-full px-8 py-6">
+            <div className="h-full px-8 py-6 bg-sky-600 text-black">
                 {/* <Badge className="uppercase text-sm font-medium mb-2 absolute top-4 left-5">
                 {project.category}
                 </Badge> */}
