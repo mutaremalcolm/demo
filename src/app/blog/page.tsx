@@ -7,7 +7,7 @@ import { Tabs, TabsList, TabsContent, TabsTrigger } from '../../components/ui/ta
 
 const blogData = [
   {
-    image: "",
+    image: "/assets/blog/react.19.png",
     category: "Latest React News",
     name: "React 19 is here",
     description:
@@ -21,9 +21,9 @@ const blogData = [
     gitbranch: ""
   },
   {
-    image: "",
+    image: "/assets/blog/react.19.2.png",
     category: "Archive",
-    name: "Latest News",
+    name: "Past Articles",
     description:
     `🎉 Exciting news for developers! React 19 has officially launched.
     🚀 With the introduction of concurrent rendering.
@@ -35,9 +35,9 @@ const blogData = [
     gitbranch: ""
   },
   {
-    image: "",
+    image: "/assets/blog/react.19.3.png",
     category: "Research",
-    name: "Archive",
+    name: "Recent Research",
     description:
     `🎉 Exciting news for developers! React 19 has officially launched.
     🚀 With the introduction of concurrent rendering.
