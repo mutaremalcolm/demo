@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Card, CardHeader } from "./ui/card";
 
-
 interface Props {
     project: any;
   }

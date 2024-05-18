@@ -68,6 +68,7 @@ const blog = () => {
     ? project 
     : project.category === category; 
   }); 
+
   return (
     <>
     <section id="projects" className="min-h-screen pt-12 bg-sky-600">
