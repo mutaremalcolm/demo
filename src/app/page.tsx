@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Header } from "../components/Header/Header";
-
+// import Typewriter, { Options } from "typewriter-effect";
 
 export default function Home() {
   return (
