@@ -28,7 +28,7 @@ const BlogCard = ({ project}: Props)=> {
                     />
                 </div>
             </CardHeader>
-            <div className="h-full px-8 py-6 bg-sky-600 text-black">
+            <div className="h-full px-8 py-6 text-black">
                 {/* <Badge className="uppercase text-sm font-medium mb-2 absolute top-4 left-5">
                 {project.category}
                 </Badge> */}

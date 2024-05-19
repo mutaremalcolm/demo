@@ -8,7 +8,7 @@ function Dashboard() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-sky-600">
       <Header 
-        title=" This is the DashBoard Page"
+        title="DashBoard Page"
         subtitle="This page demonstates how Navigation in React works"
         />
         <div className="flex items-center justify-center gap-x-4 mt-0">
