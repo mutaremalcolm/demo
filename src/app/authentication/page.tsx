@@ -4,6 +4,7 @@ import * as z from "zod";
 import toast, { Toaster } from 'react-hot-toast';
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { Header } from "../../components/Header/Header";
+import { Card, CardHeader } from "@/components/ui/card";
 
 interface InputChangeEvent extends ChangeEvent<HTMLInputElement> {}
 
@@ -72,10 +73,11 @@ function Authentication() {
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-sky-600">
       <Header
-        title="This is the authentication page"
+        title="Authentication page"
         subtitle="This page demonstrates how to handle input validation during the authentication"
       />
-      <form onSubmit={handleSubmit} className="max-w-md w-full">
+      <Card className="rounded-lg bg-sky-600 hover:bg-sky-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-11 duration-300">
+      <form onSubmit={handleSubmit} className="max-w-md w-full mt-3 ml-3 mr-3 mb-3 ">
         <input
           type="email"
           value={email}
@@ -105,8 +107,9 @@ function Authentication() {
       {submitted ? (
         <p className="mt-4 text-lg"></p>
       ) : (
-        <p className="mt-4 text-lg text-center">Please enter your email and password</p>
+        <p className="mt-4 text-sm text-center mb-3">Please enter your email and password</p>
       )}
+      </Card>
     </main>
   );
 }
