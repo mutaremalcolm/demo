@@ -11,7 +11,7 @@ const blogData = [
     category: "Latest React News",
     name: "React 19 is here",
     description:
-      `🎉 Exciting news for developers! React 19 has officially launched.
+      `🎉 Exciting news! React 19 is here.
       🚀 With the introduction of concurrent rendering.
       💡 Say goodbye to tedious debugging with React 19's improved error handling capabilities.
       ⚡️ Experience a significant speed boost with React 19's optimized reconciliation algorithm.
