@@ -2,7 +2,7 @@ import  Socials  from "./Socials";
 
 const Footer = () => {
   return (
-    <footer className="bg-sky-600 py-12 border-t-2">
+    <footer className="bg-white py-12 border-t-2">
       <div className="container mx-auto">
         <div className="flex flex-col items-center justify-between">
           {/* socials */}
