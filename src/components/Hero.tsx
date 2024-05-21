@@ -10,7 +10,7 @@ const Hero = () => {
           <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none dark:text-white text-gray-800">
             <Typewriter
               options={{
-                strings: ["ReAct Basics"],
+                strings: ["React Basics"],
                 autoStart: true,
                 loop: true,
               }}

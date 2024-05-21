@@ -26,4 +26,19 @@ describe('Header Component', () => {
     const headerElement = screen.getByRole('main');
     expect(headerElement).toHaveClass('flex', 'flex-col', 'items-center', 'justify-center');
   });
+
+  test('updates title and subtitle when props change', async () => {
+    const initialTitle = 'Initial Title';
+    const initialSubtitle = 'Initial Subtitle';
+    const { rerender } = render(<Header title={initialTitle} subtitle={initialSubtitle} />);
+    
+    const newTitle = 'New Title';
+    const newSubtitle = 'New Subtitle';
+    rerender(<Header title={newTitle} subtitle={newSubtitle} />);
+
+    expect(screen.queryByText(initialTitle)).not.toBeInTheDocument();
+    expect(screen.queryByText(initialSubtitle)).not.toBeInTheDocument();
+    expect(screen.getByText(newTitle)).toBeInTheDocument();
+    expect(screen.getByText(newSubtitle)).toBeInTheDocument();
+  });
 });
