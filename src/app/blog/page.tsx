@@ -70,7 +70,7 @@ const blog = () => {
   });
   return (
     <>
-    <section id="projects" className="min-h-screen pt-12 bg-sky-600">
+    <section id="projects" className="min-h-screen pt-12 bg-white">
       <div className="container mx-auto">
         {/* tabs */}
         <Tabs defaultValue={category} className="mb-24 xl:mb-48">

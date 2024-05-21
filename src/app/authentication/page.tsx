@@ -71,7 +71,7 @@ function Authentication() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-sky-600">
+    <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-white">
       <Header
         title="Authentication page"
         subtitle="This page demonstrates how to handle input validation during the authentication"

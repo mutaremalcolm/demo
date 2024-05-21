@@ -75,7 +75,7 @@ function Navbar() {
     <>
       <header
         className="flex flex-col items-center justify-between max-w-full 
-          md:max-w-6xl px-2 md:px-6 py-4 mx-auto md:flex-row bg-sky-700 rounded-lg"
+          md:max-w-6xl px-2 md:px-6 py-4 mx-auto md:flex-row bg-white rounded-lg"
       >
         <a href="/" className="text-indigo-900 z-10 active">
           <Image
