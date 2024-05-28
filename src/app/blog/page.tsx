@@ -1,110 +1,73 @@
 "use client";
 
-import React from 'react';
-import { useState } from 'react';
-import  BlogCard  from '../../components/BlogCard';
-import { Tabs, TabsList, TabsContent, TabsTrigger } from '../../components/ui/tabs'
-
-const blogData = [
-  {
-    image: "/assets/blog/react.19.png",
-    category: "Latest React News",
-    name: "React 19 is here",
-    description:
-      `🎉 Exciting news! React 19 is here.
-      🚀 With the introduction of concurrent rendering.
-      💡 Say goodbye to tedious debugging with React 19's improved error handling capabilities.
-      ⚡️ Experience a significant speed boost with React 19's optimized reconciliation algorithm.
-      🌟 Don't miss out on the next evolution of React.
-      `,
-    link: "",
-    gitbranch: ""
-  },
-  {
-    image: "/assets/blog/react.19.2.png",
-    category: "Archive",
-    name: "Past Articles",
-    description:
-    `🎉 Exciting news for developers! React 19 has officially launched.
-    🚀 With the introduction of concurrent rendering.
-    💡 Say goodbye to tedious debugging with React 19's improved error handling capabilities.
-    ⚡️ Experience a significant speed boost with React 19's optimized reconciliation algorithm.
-    🌟 Don't miss out on the next evolution of React.
-    `,
-    link: "",
-    gitbranch: ""
-  },
-  {
-    image: "/assets/blog/react.19.3.png",
-    category: "Research",
-    name: "Recent Research",
-    description:
-    `🎉 Exciting news for developers! React 19 has officially launched.
-    🚀 With the introduction of concurrent rendering.
-    💡 Say goodbye to tedious debugging with React 19's improved error handling capabilities.
-    ⚡️ Experience a significant speed boost with React 19's optimized reconciliation algorithm.
-    🌟 Don't miss out on the next evolution of React.
-    `,
-    link: "",
-    gitbranch: ""
-  },
-];
-
-const uniqueCategories = [
-  'all articles',
-  ...new Set(blogData.map(item => item.category)),
-];
-
-
-  
+import React from "react";
+import Image from "next/image";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const blog = () => {
-  const [categories, setCategories] = useState(uniqueCategories);
-  const [category, setCategory] = useState('all projects');
-
-  const filteredProjects = blogData.filter(project => {
-    // if category is 'all projects' return all projects, else filter by category
-    return category === 'all projects' 
-    ? project 
-    : project.category === category; 
-  });
   return (
     <>
-    <section id="projects" className="min-h-screen pt-12 bg-white">
-      <div className="container mx-auto">
-        {/* tabs */}
-        <Tabs defaultValue={category} className="mb-24 xl:mb-48">
-          <TabsList className="w-full grid h-full md:grid-cols-4 lg:max-w-[640px]
-          mb-12 mx-auto md:border dark:border-none"
-          >
-            {categories.map((category, index) => {
-              return (
-                <TabsTrigger
-                  onClick={() => setCategory(category)}
-                  value={category}
-                  key={index}
-                  className="capitalize w-[162px] md:w-auto"
-                >
-                  {category}
-                </TabsTrigger>
-              )
-            })}
-          </TabsList>
-          {/* tabs content */}
-          <div className="text-lg xl:mt-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {filteredProjects.map((project, index)=> {
-              return ( 
-              <TabsContent value={category} key={index}>
-                <BlogCard project={project}/>
-              </TabsContent>
-            )})}
-          </div>
-        </Tabs>
-      </div>
-    </section>
-    </>
-  )
+      <Card>
+        <CardHeader className="flex items-center">
+          <CardTitle>Blog Section</CardTitle>
+          <CardDescription>
+            Find all the latest ReAct News here in our blog section
+          </CardDescription>
+        </CardHeader>
+        <section className="flex flex-row justify-around mb-10">
+          <Card className="rounded-small rounded-small">
+            <Image className="ml-5 mr-5 mt-5 rounded-md"
+              src="/assets/blog/react.19.png"
+              alt="blog image"
+              width={400}
+              height={400}
+            >
   
-}
+            </Image>
+            <CardHeader>
+              <CardTitle>
+                ReAct 19 Is Here!!!
+              </CardTitle>
+              <CardDescription>React 19 is the upcoming version of the popular <br/>JavaScript library,
+              focused on improving performance, <br/>adding new features, and enhancing developer experience.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button className="bg-sky-600">Read More</Button>
+            </CardContent>
+          </Card>
+          <Card>
+          <Image className="ml-5 mr-5 mt-5 rounded-md"
+              src="/assets/blog/react.19.3.png"
+              alt="blog image"
+              width={400}
+              height={400}
+            >
+            </Image>
+            <CardHeader>
+              <CardTitle>Data Binding in React!!!!</CardTitle>
+              <CardDescription>Data binding in React refers to the process of synchronizing <br/> 
+              data between the UI and the state, allowing automatic <br/> 
+              updates to the UI when the state changes.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button className="bg-sky-600">Read More...</Button>
+            </CardContent>
+          </Card>
+        </section>
+      </Card>
+    </>
+  );
+};
 
-export default blog
+export default blog;
