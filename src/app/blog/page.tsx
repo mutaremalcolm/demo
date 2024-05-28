@@ -18,8 +18,8 @@ const blog = () => {
     <>
       <Card>
         <CardHeader className="flex items-center">
-          <CardTitle>Blog Section</CardTitle>
-          <CardDescription>
+          <CardTitle className="text-sky-600">Blog Section</CardTitle>
+          <CardDescription className="text-sky-600">
             Find all the latest ReAct News here in our blog section
           </CardDescription>
         </CardHeader>
@@ -34,10 +34,10 @@ const blog = () => {
   
             </Image>
             <CardHeader>
-              <CardTitle>
+              <CardTitle className="text-sky-600">
                 ReAct 19 Is Here!!!
               </CardTitle>
-              <CardDescription>React 19 is the upcoming version of the popular <br/>JavaScript library,
+              <CardDescription className="text-sky-600">React 19 is the upcoming version of the popular <br/>JavaScript library,
               focused on improving performance, <br/>adding new features, and enhancing developer experience.
               </CardDescription>
             </CardHeader>
@@ -54,8 +54,8 @@ const blog = () => {
             >
             </Image>
             <CardHeader>
-              <CardTitle>Data Binding in React!!!!</CardTitle>
-              <CardDescription>Data binding in React refers to the process of synchronizing <br/> 
+              <CardTitle className="text-sky-600">Data Binding in React!!!!</CardTitle>
+              <CardDescription className="text-sky-600">Data binding in React refers to the process of synchronizing <br/> 
               data between the UI and the state, allowing automatic <br/> 
               updates to the UI when the state changes.
               </CardDescription>

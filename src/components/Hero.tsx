@@ -17,14 +17,21 @@ const Hero = () => {
             />
           </h1>
         </div>
-        <p className="text-sm sm:text-base text-gray-700 dark:text-white text-center">
-          This Application is designed to showcase the usage of basic React
-          features. <br /> Click the Get started button to explore.
+        <p className=" font-reddit-mono text-xl sm:text-base text-sky-600 dark:text-white text-center">
+        React is a popular JavaScript library for building user interfaces, 
+        particularly single-page applications.<br/> It allows developers to create reusable 
+        UI components, manage state efficiently, and render changes <br/>quickly with a 
+        virtual DOM. Developed and maintained by Facebook, React promotes a 
+        component-based <br/>architecture and supports both web and mobile applications 
+        through React Native. <br/> Its declarative approach and rich ecosystem make it a preferred choice for modern web development.
+        <br/>This Application is designed to showcase the usage of basic React
+          features. <br/> 
+          <span className="font-rubik text-2xl">CLICK THE BUTTON BELOW TO EXPLORE REACT.</span>
         </p>
         <div className="mt-8 flex justify-center space-x-4">
           <Link
             href="/authentication/"
-            className="uppercase py-2 px-4 rounded-lg bg-black border-2 border-transparent text-white text-md hover:bg-sky-900"
+            className="uppercase py-2 px-4 rounded-lg bg-sky-600 border-2 border-transparent text-white text-md hover:bg-sky-900"
           >
             Get started
           </Link>

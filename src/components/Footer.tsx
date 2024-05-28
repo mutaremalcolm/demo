@@ -12,7 +12,7 @@ const Footer = () => {
           />
           {/* copyright */}
 
-          <div className="text-black">
+          <div className="text-sky-600">
             Copyright &copy;Made with Love by Malcolm Mutare. All Rights Reserved.
           </div>
         </div>

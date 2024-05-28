@@ -18,8 +18,8 @@ function Dashboard() {
       <main className="flex flex-col ml-10 mr-10 mb-10 mt-5">
         <Card>
           <CardHeader>
-            <CardTitle className="text-center">State Demonstration</CardTitle>
-            <CardDescription className="text-center items-center ml-20 mr-20">
+            <CardTitle className="text-sky-600 text-center">State Demonstration</CardTitle>
+            <CardDescription className="text-sky-600 text-center items-center ml-20 mr-20">
               React uses built-in functions called hooks to manage state and side effects 
               in functional components.<br/> There are various hooks available within the React 
               ecosystem. Here, we will explore two specific hooks: <br/>useState for managing 
@@ -27,9 +27,9 @@ function Dashboard() {
             </CardDescription>
           </CardHeader>
           <section className="flex flex-row justify-around">
-            <Card className="bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
-              <CardTitle className="text-center mt-5 mb-5">useState Hook</CardTitle>
-              <CardDescription className="text-center mt-10 mb-10">
+            <Card className="text-sky-600 bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
+              <CardTitle className="text-sky-600 text-center mt-5 mb-5">useState Hook</CardTitle>
+              <CardDescription className="text-sky-600 text-center mt-10 mb-10">
                 The useState hook in React allows functional components to manage state. 
                 It takes an initial state value as an argument and returns an array with the 
                 current state and a function to update it. When the state is updated, 
@@ -54,10 +54,10 @@ function Dashboard() {
               </div>
             </Card>
             <Card className="bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
-              <CardTitle className="text-center mt-5 mb-5">
+              <CardTitle className="text-sky-600 text-center mt-5 mb-5">
                 useEffect Hook
               </CardTitle>
-              <CardDescription className="text-center mt-10 mb-10">
+              <CardDescription className="text-sky-600 text-center mt-10 mb-10">
                 The useEffect hook in React allows functional components to handle side effects, 
                 such as data fetching, subscriptions, or manually changing the DOM. 
                 It takes a function as an argument that runs after every render by default. 

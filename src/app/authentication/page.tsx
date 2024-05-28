@@ -72,43 +72,47 @@ function Authentication() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-white">
-      <Header
-        title="Authentication page"
-        subtitle="This page demonstrates how to handle input validation during the authentication"
-      />
-      <Card className="rounded-lg bg-sky-600 hover:bg-sky-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-11 duration-300">
-      <form onSubmit={handleSubmit} className="max-w-md w-full mt-3 ml-3 mr-3 mb-3 ">
-        <input
-          type="email"
-          value={email}
-          onChange={handleEmailChange}
-          placeholder="Enter your email"
-          className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none 
-          focus:ring focus:border-blue-500"
-        />
-        {emailError && <div className="text-red-500">{emailError}</div>}
-        <input
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          placeholder="Enter your password"
-          className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none 
-          focus:ring focus:border-blue-500 mt-2"
-        />
-        {passwordError && <div className="text-red-500">{passwordError}</div>}
-        <button
-          type="submit"
-          className="mt-2 text-lg font-semibold rounded-lg px-4 py-2 w-full bg-gradient-to-r from-green-400
-           to-blue-500"
-        >
-          Submit
-        </button>
-      </form>
-      {submitted ? (
-        <p className="mt-4 text-lg"></p>
-      ) : (
-        <p className="mt-4 text-sm text-center mb-3">Please enter your email and password</p>
-      )}
+      <Card>
+        <section className="mt-20 mb-10 ml-20 mr-20">
+          <Header
+            title="Authentication page"
+            subtitle="This page demonstrates how to handle input validation during the authentication"
+          />
+        </section> 
+        <div className="flex justify-center">
+          <Card className="w-full max-w-md mt-5 mb-5 rounded-lg bg-sky-600">
+            <form onSubmit={handleSubmit} className="p-6">
+              <input
+                type="email"
+                value={email}
+                onChange={handleEmailChange}
+                placeholder="Enter your email"
+                className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+              />
+              {emailError && <div className="text-red-500">{emailError}</div>}
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+                placeholder="Enter your password"
+                className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500 mt-2"
+              />
+              {passwordError && <div className="text-red-500">{passwordError}</div>}
+              <button
+                type="submit"
+                className="mt-2 text-lg font-semibold rounded-lg px-4 py-2 w-full bg-gradient-to-r from-green-400 to-blue-500
+                hover:bg-sky-500 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-11 duration-300"
+              >
+                Submit
+              </button>
+            </form>
+            {submitted ? (
+              <p className="mt-4 text-lg"></p>
+            ) : (
+              <p className="mt-2 text-sm text-center mb-3">Please enter your email and password</p>
+            )}
+          </Card>
+        </div>
       </Card>
     </main>
   );
