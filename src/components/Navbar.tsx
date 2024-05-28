@@ -1,24 +1,25 @@
 "use client";
 
-// import { useEffect, useState } from "react";
-// import Link from "next/link";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { LayoutDashboard, LockIcon, PenLine } from "lucide-react";
 import React_Logo from "../../public/assets/navbar/React_Logo.png";
 import Image from "next/image";
 
 function Navbar() {
-  //   const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-  //   useEffect(() => {
-  //     const handleResize = () => {
-  //       setIsMobile(window.innerWidth < 768);
-  //     };
+    useEffect(() => {
+      const handleResize = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
 
-  //     handleResize();
-  //     window.addEventListener("resize", handleResize);
+      handleResize();
+      window.addEventListener("resize", handleResize);
 
-  //     return () => window.removeEventListener("resize", handleResize);
-  //   }, []);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   //   return (
   //     <nav className="flex flex-col lg:flex-row justify-between py-4 px-3 lg:px-8 bg-sky-600 border-b-2">
@@ -75,29 +76,35 @@ function Navbar() {
     <>
       <header
         className="flex flex-col items-center justify-between max-w-full 
-          md:max-w-6xl px-2 md:px-6 py-4 mx-auto md:flex-row bg-white rounded-lg"
+          md:max-w-6xl px-2 md:px-6 py-4 mx-auto md:flex-row rounded-lg"
       >
-        <a href="/" className="text-indigo-900 z-10 active">
+        <Link href="/" className="text-indigo-900 z-10 active">
           <Image
             src={React_Logo}
             alt="logo"
             className="w-24 py-4 md:py-0 g-image"
           />
-        </a>
+        </Link>
         <nav className="z-10">
           <ul className="flex flex-row items-center px-6 py-2 text-indigo-100 bg-sky-600 rounded-lg">
             <li className="pr-4">
-              <a href="/dashboard/">Dashboard</a>
+              <Link href="/dashboard/">Dashboard</Link>
             </li>
             <li className="pr-4">
-              <a href="/blog/">Blog</a>
+              <Link href="/blog/">Blog</Link>
             </li>
             <li className="text-red-200">
-              <a href="/authentication/" className="ml-2">
+              <Link href="/authentication/" className="ml-2">
                 Log In
-              </a>
+              </Link>
             </li>
-          </ul>
+            <li className="ml-12">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+            </li>
+          </ul>     
         </nav>
       </header>
     </>
