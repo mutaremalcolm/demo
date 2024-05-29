@@ -16,7 +16,7 @@ function Dashboard() {
   return (
     <>
       <main className="flex flex-col ml-10 mr-10 mb-10 mt-5">
-        <Card>
+        <Card className="border-sky-600">
           <CardHeader>
             <CardTitle className="text-sky-600 text-center">State Demonstration</CardTitle>
             <CardDescription className="text-sky-600 text-center items-center ml-20 mr-20">
@@ -27,7 +27,7 @@ function Dashboard() {
             </CardDescription>
           </CardHeader>
           <section className="flex flex-row justify-around">
-            <Card className="text-sky-600 bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
+            <Card className="border-sky-600 text-sky-600 bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
               <CardTitle className="text-sky-600 text-center mt-5 mb-5">useState Hook</CardTitle>
               <CardDescription className="text-sky-600 text-center mt-10 mb-10">
                 The useState hook in React allows functional components to manage state. 
@@ -53,7 +53,7 @@ function Dashboard() {
                 </Link>
               </div>
             </Card>
-            <Card className="bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
+            <Card className="border-sky-600 bg-white rounded-xl shadow-lg px-6 py-4 w-4/12 mt-15 mb-20 ml-10">
               <CardTitle className="text-sky-600 text-center mt-5 mb-5">
                 useEffect Hook
               </CardTitle>

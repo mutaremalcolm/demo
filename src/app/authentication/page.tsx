@@ -72,7 +72,7 @@ function Authentication() {
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-white">
-      <Card>
+      <Card className="border-sky-600">
         <section className="mt-20 mb-10 ml-20 mr-20">
           <Header
             title="Authentication page"

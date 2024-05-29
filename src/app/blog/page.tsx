@@ -16,7 +16,7 @@ import {
 const blog = () => {
   return (
     <>
-      <Card>
+      <Card className="border-sky-600 ml-5 mr-5">
         <CardHeader className="flex items-center">
           <CardTitle className="text-sky-600">Blog Section</CardTitle>
           <CardDescription className="text-sky-600">
@@ -24,12 +24,12 @@ const blog = () => {
           </CardDescription>
         </CardHeader>
         <section className="flex flex-row justify-around mb-10">
-          <Card className="rounded-small rounded-small">
+          <Card className="border-sky-600 rounded-small rounded-small">
             <Image className="ml-5 mr-5 mt-5 rounded-md"
               src="/assets/blog/react.19.png"
               alt="blog image"
               width={400}
-              height={400}
+              height={300}
             >
   
             </Image>
@@ -45,12 +45,12 @@ const blog = () => {
               <Button className="bg-sky-600">Read More</Button>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="border-sky-600">
           <Image className="ml-5 mr-5 mt-5 rounded-md"
               src="/assets/blog/react.19.3.png"
               alt="blog image"
               width={400}
-              height={400}
+              height={300}
             >
             </Image>
             <CardHeader>

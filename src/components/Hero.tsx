@@ -18,15 +18,21 @@ const Hero = () => {
           </h1>
         </div>
         <p className=" font-reddit-mono text-xl sm:text-base text-sky-600 dark:text-white text-center">
-        React is a popular JavaScript library for building user interfaces, 
-        particularly single-page applications.<br/> It allows developers to create reusable 
-        UI components, manage state efficiently, and render changes <br/>quickly with a 
-        virtual DOM. Developed and maintained by Facebook, React promotes a 
-        component-based <br/>architecture and supports both web and mobile applications 
-        through React Native. <br/> Its declarative approach and rich ecosystem make it a preferred choice for modern web development.
-        <br/>This Application is designed to showcase the usage of basic React
-          features. <br/> 
-          <span className="font-rubik text-2xl">CLICK THE BUTTON BELOW TO EXPLORE REACT.</span>
+          React is a popular JavaScript library for building user interfaces,
+          particularly single-page applications.
+          <br /> It allows developers to create reusable UI components, manage
+          state efficiently, and render changes <br />
+          quickly with a virtual DOM. Developed and maintained by Facebook/Meta
+          , React promotes a component <br />
+          based architecture and supports both web and mobile applications
+          through React Native. <br />
+          This Application is designed to showcase the usage of basic React
+          features. <br />
+          <div className="mt-8">
+            <span className="font-rubik text-2xl">
+              CLICK BELOW TO EXPLORE REACT.
+            </span>
+          </div>
         </p>
         <div className="mt-8 flex justify-center space-x-4">
           <Link
@@ -37,7 +43,7 @@ const Hero = () => {
           </Link>
           <Link
             href="/blog/"
-            className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-black text-black dark:text-white hover:bg-sky-600 hover:text-white text-md"
+            className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-sky-600 text-sky-600 dark:text-white hover:bg-sky-600 hover:text-white text-md"
           >
             Read more
           </Link>
