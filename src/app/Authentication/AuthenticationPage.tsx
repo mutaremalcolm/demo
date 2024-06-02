@@ -1,10 +1,11 @@
 "use client";
 
 import * as z from "zod";
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { useUserContext } from '../../contexts/UserContext'
 import { Header } from "../../components/Header/Header";
-import { Card, CardHeader } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 
 interface InputChangeEvent extends ChangeEvent<HTMLInputElement> {}
 
@@ -21,6 +22,7 @@ const passwordSchema = z.string()
   });
 
 function Authentication() {
+  const { dispatch } = useUserContext(); 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState<ValidationMessage>(null);
@@ -30,19 +32,20 @@ function Authentication() {
   const handleEmailChange = (e: InputChangeEvent) => {
     const value = e.target.value;
     setEmail(value);
+    setEmailError(null);
     validateEmail(value);
   };
 
   const handlePasswordChange = (e: InputChangeEvent) => {
     const value = e.target.value;
     setPassword(value);
+    setPasswordError(null);
     validatePassword(value);
   };
 
   const validateEmail = (value: string) => {
     try {
       emailSchema.parse(value);
-      setEmailError(null);
     } catch (validationError) {
       if (validationError instanceof z.ZodError) {
         setEmailError(validationError.errors[0].message);
@@ -53,7 +56,6 @@ function Authentication() {
   const validatePassword = (value: string) => {
     try {
       passwordSchema.parse(value);
-      setPasswordError(null);
     } catch (validationError) {
       if (validationError instanceof z.ZodError) {
         setPasswordError(validationError.errors[0].message);
@@ -63,12 +65,16 @@ function Authentication() {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (email.trim() === '' || password.trim() === '') {
-      return;
+    if (email.trim() === 'test@mail.com' && password.trim() === '123456a?') {
+      setSubmitted(true);
+      toast.success("Authentication successful! Proceeding to the Dashboard");
+
+      // Update the user context state upon successful login
+      dispatch({ type: 'LOGIN', payload: { username: email } });
+    } else {
+      toast.error("Authentication unsuccessful! Incorrect password or username");
     }
-    setSubmitted(true);
-    toast.success("Authentication successful! Proceeding to the Dashboard")
-  };
+  }
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-white">

@@ -1,114 +1,104 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useUserContext } from '../contexts/UserContext';
 import { LayoutDashboard, LockIcon, PenLine } from "lucide-react";
-import React_Logo from "../../public/assets/navbar/React_Logo.png";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Image from "next/image";
+import HomePage from '../app/HomePage';
+import BlogPage from '../app/Blog/BlogPage';
+import DashboardPage from '../app/DashboardPage/DashBoardPage';
+import React_Logo from "../../public/assets/navbar/React_Logo.png";
+import AuthenticationPage from '../app/Authentication/AuthenticationPage';
+import ProtectedRoute from '../components/ProtectedRoutes'; 
 
-function Navbar() {
+export const Navbar = () => {
+    const { state, dispatch } = useUserContext();
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-      const handleResize = () => {
-        setIsMobile(window.innerWidth < 768);
-      };
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
 
-      handleResize();
-      window.addEventListener("resize", handleResize);
+        handleResize();
+        window.addEventListener("resize", handleResize);
 
-      return () => window.removeEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-  //   return (
-  //     <nav className="flex flex-col lg:flex-row justify-between py-4 px-3 lg:px-8 bg-sky-600 border-b-2">
-  //       <div className="flex items-center">
-  //         <Link href="/">
-  //         <Image src={React_Logo} alt="React Logo" className="h-12 w-auto" />
-  //         </Link>
-  //       </div>
-  //       <div className="flex flex-row gap-5 text-xl lg:ml-auto">
-  //         <Link href="/dashboard/" className="flex items-center gap-2">
-  //           <span>
-  //             {isMobile ? (
-  //               <LayoutDashboard />
-  //             ) : (
-  //               <>
-  //                 <LayoutDashboard />
-  //                 <h1 className="sr-only">Dashboard</h1>
-  //               </>
-  //             )}
-  //           </span>
-  //           {!isMobile && <h1>Dashboard</h1>}
-  //         </Link>
-  //         <Link href="/blog/" className="flex items-center gap-2">
-  //           <span>
-  //             {isMobile ? (
-  //               <PenLine />
-  //             ) : (
-  //               <>
-  //                 <PenLine />
-  //                 <h1 className="sr-only">Blog</h1>
-  //               </>
-  //             )}
-  //           </span>
-  //           {!isMobile && <h1>Blog</h1>}
-  //         </Link>
-  //         <Link href="/authentication/" className="flex items-center gap-2">
-  //           <span>
-  //             {isMobile ? (
-  //               <LockIcon />
-  //             ) : (
-  //               <>
-  //                 <LockIcon />
-  //                 <h1 className="sr-only">Log In</h1>
-  //               </>
-  //             )}
-  //           </span>
-  //           {!isMobile && <h1>Log In</h1>}
-  //         </Link>
-  //       </div>
-  //     </nav>
-  //   );
-  // }
-  return (
-    <>
-      <header
-        className="flex flex-col items-center justify-between max-w-full 
-          md:max-w-6xl px-2 md:px-6 py-4 mx-auto md:flex-row rounded-lg"
-      >
-        <Link href="/" className="text-indigo-900 z-10 active">
-          <Image
-            src={React_Logo}
-            alt="logo"
-            className="w-24 py-4 md:py-0 g-image"
-          />
-        </Link>
-        <nav className="z-10">
-          <ul className="flex flex-row items-center px-6 py-2 text-indigo-100 bg-sky-600 rounded-lg">
-            <li className="pr-4">
-              <Link href="/dashboard/">Dashboard</Link>
-            </li>
-            <li className="pr-4">
-              <Link href="/blog/">Blog</Link>
-            </li>
-            <li className="text-red-200">
-              <Link href="/authentication/" className="ml-2">
-                Log In
-              </Link>
-            </li>
-            <li className="ml-12">
-              <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            </li>
-          </ul>     
-        </nav>
-      </header>
-    </>
-  );
+    const handleLogout = () => {
+        dispatch({ type: 'LOGOUT' });
+    };
+
+    return (
+        <header className="flex flex-col items-center justify-between max-w-full md:max-w-6xl px-2 md:px-6 py-4 mx-auto md:flex-row rounded-lg">
+            <Link to="/" className="text-indigo-900 z-10 active">
+                <Image src={React_Logo} alt="React Logo" className="w-24 py-4 md:py-0 g-image" />
+            </Link>
+            <nav className="z-10">
+                <ul className="flex flex-row items-center px-6 py-2 text-indigo-100 bg-sky-600 rounded-lg">
+                    <li className="pr-4">
+                        <Link to="/dashboard/" className="flex items-center gap-2">
+                            <LayoutDashboard />
+                            {!isMobile && <span>Dashboard</span>}
+                        </Link>
+                    </li>
+                    <li className="pr-4">
+                        <Link to="/blog/" className="flex items-center gap-2">
+                            <PenLine />
+                            {!isMobile && <span>Blog</span>}
+                        </Link>
+                    </li>
+                    <li className="ml-12">
+                        {state.isAuthenticated && state.user ? (
+                            <div className="flex items-center gap-2">
+                                <Avatar>
+                                    <AvatarImage src={state.user.avatarUrl || "https://github.com/shadcn.png"} />
+                                    <AvatarFallback>CN</AvatarFallback>
+                                </Avatar>
+                                <button onClick={handleLogout} className="text-red-200">Logout</button>
+                            </div>
+                        ) : (
+                            <Link to="/authentication/" className="flex items-center gap-2 text-red-200">
+                                <LockIcon />
+                                {!isMobile && <span>Log In</span>}
+                            </Link>
+                        )}
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    );
 }
 
-export default Navbar;
+function App() {
+    return (
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/authentication" element={<AuthenticationPage />} />
+                <Route
+                    path="/dashboard"
+                    element={
+                        <ProtectedRoute>
+                            <DashboardPage />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/blog"
+                    element={
+                        <ProtectedRoute>
+                            <BlogPage />
+                        </ProtectedRoute>
+                    }
+                />
+            </Routes>
+        </Router>
+    );
+}
+
+export default App;
