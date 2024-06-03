@@ -6,11 +6,11 @@ import { LayoutDashboard, LockIcon, PenLine } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Image from "next/image";
-import HomePage from '../app/HomePage';
-import BlogPage from '../app/Blog/BlogPage';
-import DashboardPage from '../app/DashboardPage/DashBoardPage';
+import  Home  from '../app/page';
+import BlogPage from '../app/Blog/page';
+import DashboardPage from '../app/DashboardPage/page';
 import React_Logo from "../../public/assets/navbar/React_Logo.png";
-import AuthenticationPage from '../app/Authentication/AuthenticationPage';
+import AuthenticationPage from '../app/Authentication/page';
 import ProtectedRoute from '../components/ProtectedRoutes'; 
 
 export const Navbar = () => {
@@ -73,12 +73,14 @@ export const Navbar = () => {
     );
 }
 
+
 function App() {
     return (
+        <>
         <Router>
             <Navbar />
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/authentication" element={<AuthenticationPage />} />
                 <Route
                     path="/dashboard"
@@ -98,6 +100,7 @@ function App() {
                 />
             </Routes>
         </Router>
+        </>
     );
 }
 

@@ -1,6 +1,6 @@
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Dashboard from '../app/DashboardPage/DashBoardPage';
+import Dashboard from '../app/DashboardPage/page';
 
 test('buttons trigger correct actions', async () => {
   render(<Dashboard />);

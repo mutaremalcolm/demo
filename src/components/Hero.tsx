@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 flex flex-col items-center relative z-20 overflow-hidden">
+    <div className="bg-white flex flex-col items-center relative z-20 overflow-hidden">
       <div className="sm:w-2/3 lg:w-full flex flex-col relative z-20 items-center">
         <div className="h-14 sm:h-32">
           <h1 className="font-bebas-neue uppercase text-2xl sm:text-8xl font-black leading-none dark:text-white text-sky-600 whitespace-nowrap">

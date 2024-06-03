@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import Authentication from '../app/Authentication/AuthenticationPage';
+import Authentication from '../app/Authentication/page';
 
 describe('Authentication Component', () => {
   test('renders authentication page heading correctly', () => {
