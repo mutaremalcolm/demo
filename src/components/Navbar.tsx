@@ -57,7 +57,7 @@ function Navbar() {
                 </li>
                 <li className="ml-12">
                   <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarImage src="/assets/hero/shadcn.jpeg/" />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 </li>

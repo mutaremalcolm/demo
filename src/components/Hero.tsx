@@ -43,7 +43,7 @@ const Hero = () => {
           </Link>
           <Link
             href="https://react.dev/blog/2024/04/25/react-19" target="new"
-            className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-sky-600 text-sky-600 dark:text-white hover:bg-sky-600 hover:text-white text-md"
+            className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-sky-600 text-white dark:text-sky-600 dark:rounded-lg hover:bg-sky-600 hover:text-white text-md"
           >
             Read more
           </Link>
