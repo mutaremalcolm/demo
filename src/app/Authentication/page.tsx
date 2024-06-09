@@ -79,7 +79,7 @@ function Authentication() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 bg-white">
+    <main className="min-h-screen flex flex-col items-center justify-center gap-6 mx-auto px-4 lg:px-8 ">
       <Card className="border-sky-600">
         <section className="mt-20 mb-10 ml-20 mr-20">
           <Header
@@ -88,7 +88,7 @@ function Authentication() {
           />
         </section> 
         <div className="flex justify-center">
-          <Card className="w-full max-w-md mt-5 mb-5 rounded-lg bg-sky-600">
+          <Card className="w-full max-w-md mt-5 mb-5 rounded-lg">
             <form onSubmit={handleSubmit} className="p-6">
               <input
                 autoFocus
@@ -96,7 +96,7 @@ function Authentication() {
                 value={email}
                 onChange={handleEmailChange}
                 placeholder="Enter your email"
-                className="border border-gray-300 text-black rounded-lg px-4 py-2
+                className="border border-gray-300 text-sky-600 rounded-lg px-4 py-2
                  w-full focus:outline-none focus:ring focus:border-blue-500"
               />
               {emailError && <div className="text-red-500">{emailError}</div>}
@@ -105,7 +105,7 @@ function Authentication() {
                 value={password}
                 onChange={handlePasswordChange}
                 placeholder="Enter your password"
-                className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500 mt-2"
+                className="border border-gray-300 text-sky-600 rounded-lg px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500 mt-2"
               />
               {passwordError && <div className="text-red-500">{passwordError}</div>}
               <button
