@@ -6,6 +6,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useUserContext } from "../contexts/UserContext";
 import React_Logo from "../../public/assets/navbar/React_Logo.png";
 import Image from "next/image";
+import { ModeToggle } from "./themeToggle";
 
 function Navbar() {
   const [isMobile, setIsMobile] = useState(false);
@@ -68,6 +69,9 @@ function Navbar() {
                 </Link>
               </li>
             )}
+            <li className="pl-4">
+            <ModeToggle />
+            </li>
           </ul>     
         </nav>
       </header>

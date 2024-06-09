@@ -4,10 +4,10 @@ import Typewriter from "typewriter-effect";
 
 const Hero = () => {
   return (
-    <div className="bg-white flex flex-col items-center relative z-20 overflow-hidden">
+    <div className="flex flex-col items-center relative z-20 overflow-hidden">
       <div className="sm:w-2/3 lg:w-full flex flex-col relative z-20 items-center">
         <div className="h-14 sm:h-32">
-          <h1 className="font-bebas-neue uppercase text-2xl sm:text-8xl font-black leading-none dark:text-white text-sky-600 whitespace-nowrap">
+          <h1 className="font-bebas-neue uppercase text-2xl sm:text-8xl font-black leading-none text-sky-600 whitespace-nowrap">
             <Typewriter
               options={{
                 strings: ["React Basics"],
@@ -17,7 +17,7 @@ const Hero = () => {
             />
           </h1>
         </div>
-        <p className=" font-reddit-mono text-xl sm:text-base text-sky-600 dark:text-white text-center">
+        <p className=" font-reddit-mono text-xl sm:text-base text-sky-600  text-center">
           React is a popular JavaScript library for building user interfaces,
           particularly single-page applications.
           <br /> It allows developers to create reusable UI components, manage
