@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { useState } from "react";
+import withAuth from "@/components/ProtectedRoutes";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const blog = () => {
+const Blog = () => {
   return (
     <>
       <Card className="border-sky-600 ml-5 mr-5">
@@ -70,4 +70,4 @@ const blog = () => {
   );
 };
 
-export default blog;
+export default withAuth(Blog);

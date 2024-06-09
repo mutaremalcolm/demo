@@ -1,55 +1,47 @@
 "use client"
 
-import React, { createContext, useReducer, useContext, ReactNode } from 'react';
-
-interface User {
-  username: string;
-  avatarUrl?: string;
-}
+import { createContext, useContext, useReducer, ReactNode } from 'react';
 
 interface UserState {
   isAuthenticated: boolean;
-  user: User | null;
+  username: string | null;
 }
 
-type UserAction =
-  | { type: 'LOGIN'; payload: User }
+type Action = 
+  | { type: 'LOGIN', payload: { username: string } }
   | { type: 'LOGOUT' };
 
 const initialState: UserState = {
   isAuthenticated: false,
-  user: null,
+  username: null,
 };
 
-const UserContext = createContext<{
-  state: UserState;
-  dispatch: React.Dispatch<UserAction>;
-}>({
+const UserContext = createContext<{ state: UserState, dispatch: React.Dispatch<Action> }>({
   state: initialState,
   dispatch: () => null,
 });
 
-const userReducer = (state: UserState, action: UserAction): UserState => {
+const reducer = (state: UserState, action: Action): UserState => {
   switch (action.type) {
     case 'LOGIN':
       return {
         ...state,
         isAuthenticated: true,
-        user: action.payload,
+        username: action.payload.username,
       };
     case 'LOGOUT':
-      return {
-        ...state,
-        isAuthenticated: false,
-        user: null,
-      };
+      return initialState;
     default:
       return state;
   }
 };
 
-export const UserProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(userReducer, initialState);
+interface UserProviderProps {
+  children: ReactNode;
+}
+
+export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <UserContext.Provider value={{ state, dispatch }}>

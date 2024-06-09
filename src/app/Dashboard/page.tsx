@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
-import { Header } from "../../components/Header/Header";
+import withAuth from "@/components/ProtectedRoutes";
 import {
   Card,
   CardContent,
@@ -88,4 +88,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default withAuth(Dashboard);

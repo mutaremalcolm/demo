@@ -3,17 +3,17 @@
 import * as z from "zod";
 import toast from 'react-hot-toast';
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { useUserContext } from '../../contexts/UserContext'
+import { useUserContext } from '../../contexts/UserContext';
 import { Header } from "../../components/Header/Header";
 import { Card } from "@/components/ui/card";
+import { useRouter } from 'next/navigation';
+
 
 interface InputChangeEvent extends ChangeEvent<HTMLInputElement> {}
 
 type ValidationMessage = string | null;
 
-const emailSchema = z.string()
-  .email({ message: "Invalid email format" });
-
+const emailSchema = z.string().email({ message: "Invalid email format" });
 const passwordSchema = z.string()
   .min(6, { message: "Password must be at least 6 characters long" })
   .max(16, { message: "Password must be at most 16 characters long" })
@@ -22,12 +22,13 @@ const passwordSchema = z.string()
   });
 
 function Authentication() {
-  const { dispatch } = useUserContext(); 
+  const { dispatch } = useUserContext();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState<ValidationMessage>(null);
   const [passwordError, setPasswordError] = useState<ValidationMessage>(null);
   const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
 
   const handleEmailChange = (e: InputChangeEvent) => {
     const value = e.target.value;
@@ -71,6 +72,7 @@ function Authentication() {
 
       // Update the user context state upon successful login
       dispatch({ type: 'LOGIN', payload: { username: email } });
+      router.push('/Dashboard');
     } else {
       toast.error("Authentication unsuccessful! Incorrect password or username");
     }
@@ -89,11 +91,13 @@ function Authentication() {
           <Card className="w-full max-w-md mt-5 mb-5 rounded-lg bg-sky-600">
             <form onSubmit={handleSubmit} className="p-6">
               <input
+                autoFocus
                 type="email"
                 value={email}
                 onChange={handleEmailChange}
                 placeholder="Enter your email"
-                className="border border-gray-300 text-black rounded-lg px-4 py-2 w-full focus:outline-none focus:ring focus:border-blue-500"
+                className="border border-gray-300 text-black rounded-lg px-4 py-2
+                 w-full focus:outline-none focus:ring focus:border-blue-500"
               />
               {emailError && <div className="text-red-500">{emailError}</div>}
               <input
