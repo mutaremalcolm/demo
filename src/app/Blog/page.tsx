@@ -12,6 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Link from "next/link";
 
 const Blog = () => {
   return (
@@ -42,7 +43,9 @@ const Blog = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <Link href='https://react.dev/blog/2024/04/25/react-19' target='new'>
               <Button className="bg-sky-600">Read More</Button>
+              </Link>
             </CardContent>
           </Card>
           <Card className="border-sky-600">
@@ -61,7 +64,10 @@ const Blog = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
+              <Link href='https://handsontable.com/blog/understanding-data-binding-in-react#:~:text=Data%20binding%20in%20React%20can,various%20examples%20and%20use%20cases.' 
+                    target="new">
               <Button className="bg-sky-600">Read More...</Button>
+              </Link>
             </CardContent>
           </Card>
         </section>

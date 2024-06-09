@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import { UserProvider } from "@/contexts/UserContext";
+import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import Footer from "@/components/Footer";
@@ -15,20 +16,27 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-} 
-// Readonly<{
-//   children: React.ReactNode;
-// }>
+}
+  // Readonly<{
+  //   children: React.ReactNode;
+  // }>
 ) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <UserProvider>
-          <Navbar />
-          <Toaster />
-          {children}
-        </UserProvider>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <UserProvider>
+            <Navbar />
+            <Toaster />
+            {children}
+            <Footer />
+          </UserProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
