@@ -14,7 +14,7 @@ export default function Home() {
       >
         <main
           className="min-h-screen text-center flex flex-col items-center 
-          justify-center gap-6 mx-auto px-4 lg:px-8 bg-white"
+          justify-center gap-6 mx-auto px-4 lg:px-8"
         >
           <Hero />
         </main>
